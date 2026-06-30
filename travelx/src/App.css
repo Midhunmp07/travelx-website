@@ -54,7 +54,7 @@ body{
 /* Hero Section */
 
 .hero{
-    height:90vh;
+    height:95vh;
     background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
     url("bg.jpg");
     background-size:cover;
@@ -102,9 +102,10 @@ body{
 /* Destinations */
 
 .destinations{
-    padding:80px 8%;
-    background:#f8f9fa;
+    padding: 80px 8%;
+     background: #f8f9fa;
 }
+
 
 .destinations h2{
     text-align:center;
