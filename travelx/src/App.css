@@ -245,42 +245,89 @@ body{
 }
 
 /* Mood Finder */
-
-.finder{
+.mood{
     padding:80px 8%;
-    text-align:center;
     background:#ffffff;
+    text-align:center;
 }
 
-.finder h2{
+.mood h2{
     font-size:40px;
     margin-bottom:15px;
-    color:#222;
+    color:black;
 }
 
-.finder p{
+.mood p{
     color:#666;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
-.finder select{
-    width:280px;
-    padding:14px;
-    border:2px solid #009688;
-    border-radius:10px;
-    font-size:16px;
-    outline:none;
+.mood-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
 }
 
-.result{
-    margin-top:30px;
-    display:inline-block;
+.mood-buttons button{
+    padding:12px 22px;
+    border:none;
+    border-radius:30px;
     background:#009688;
     color:white;
-    padding:20px 35px;
-    border-radius:12px;
-    font-size:22px;
-    font-weight:600;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.mood-buttons button:hover{
+    background:#00796b;
+    transform:translateY(-3px);
+}
+
+.result-card{
+    width:350px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.result-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.result-card h3{
+    margin:20px 0 10px;
+    color: #00bfa5;
+}
+
+.result-card p{
+    padding:0 20px;
+    line-height:1.6;
+}
+
+.result-card h4{
+    color:#009688;
+    margin:15px 0;
+}
+
+.book-btn{
+    margin-bottom:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#009688;
+    color:white;
+    cursor:pointer;
+}
+
+.book-btn:hover{
+    background:#00796b;
 }
 
 /* Contact */

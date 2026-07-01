@@ -1,53 +1,91 @@
 import { useState } from "react";
 
 function MoodFinder() {
-  const [destination, setDestination] = useState("");
+  const [place, setPlace] = useState(null);
 
-  const findDestination = (mood) => {
-    switch (mood) {
-      case "Relax":
-        setDestination("🌿 Munnar - Enjoy nature and peace.");
-        break;
+  const moods = {
+    Relax: {
+      emoji: "🏖️",
+      name: "Goa",
+      image: "goa.jpg",
+      desc: "Relax on beautiful beaches and enjoy peaceful sunsets.",
+      price: "₹6,999",
+    },
 
-      case "Adventure":
-        setDestination("🏔️ Manali - Perfect for trekking and adventure.");
-        break;
+    Adventure: {
+      emoji: "🏔️",
+      name: "Wayanad",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600",
+      desc: "Perfect for trekking, waterfalls and camping.",
+      price: "₹5,999",
+    },
 
-      case "Beach":
-        setDestination("🏖️ Goa - Relax on beautiful beaches.");
-        break;
+    Romantic: {
+      emoji: "❤️",
+      name: "Munnar",
+      image: "munnar.jpg",
+      desc: "A romantic hill station with tea gardens.",
+      price: "₹4,999",
+    },
 
-      case "Nature":
-        setDestination("🌳 Wayanad - Explore forests and waterfalls.");
-        break;
+    Beach: {
+      emoji: "😌",
+      name: "Jaipur",
+      image: "jaipur.jpg",
+      desc: "Discover magnificent forts, royal palaces and rich Rajasthani culture.",
+      price: "₹7,499"
+    },
 
-      case "Heritage":
-        setDestination("🏰 Jaipur - Discover forts and palaces.");
-        break;
+    Nature: {
+      emoji: "🌿",
+      name: "Ooty",
+      image: "ooty.jpg",
+      desc: "Green hills, lakes and pleasant climate.",
+      price: "₹5,499",
+    },
 
-      default:
-        setDestination("");
-    }
+    Mountains: {
+    emoji: "🏔️",
+    name: "Manali",
+    image: "manali.jpg",
+    desc: "Enjoy breathtaking mountain views, cool weather and snow-covered landscapes.",
+    price: "₹7,999",
+    },
+
   };
 
   return (
-    <section className="finder" id="finder">
-      <h2>Find Your Perfect Destination</h2>
+    <section className="mood" id="finder">
+      <h2> Mood Finder </h2>
 
-      <p>Select your travel mood</p>
+      <p>What's your travel mood today?</p>
 
-      <select onChange={(e) => findDestination(e.target.value)}>
-        <option value="">Choose Mood</option>
-        <option value="Relax">Relax</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Beach">Beach</option>
-        <option value="Nature">Nature</option>
-        <option value="Heritage">Heritage</option>
-      </select>
+      <div className="mood-buttons">
+        <button onClick={() => setPlace(moods.Relax)}>Relax</button>
 
-      {destination && (
-        <div className="result">
-          <h3>{destination}</h3>
+        <button onClick={() => setPlace(moods.Adventure)}>Adventure</button>
+
+        <button onClick={() => setPlace(moods.Romantic)}>Romantic</button>
+
+        <button onClick={() => setPlace(moods.Beach)}>Heritage</button>
+
+        <button onClick={() => setPlace(moods.Nature)}>Nature</button>
+
+        <button onClick={() => setPlace(moods.Mountains)}>Mountains</button></div>
+
+      {place && (
+        <div className="result-card">
+          <img src={place.image} alt={place.name} />
+
+          <h3>
+            {place.emoji} {place.name}
+          </h3>
+
+          <p>{place.desc}</p>
+
+          <h4>{place.price}</h4>
+
+          <button className="book-btn">Book Now</button>
         </div>
       )}
     </section>
