@@ -99,6 +99,23 @@ body{
     background:#00796b;
     transform:translateY(-3px);
 }
+
+h1,
+h2,
+h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+p,
+button,
+input,
+textarea,
+label,
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* Destinations */
 
 .destinations{
